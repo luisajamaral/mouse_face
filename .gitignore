@@ -1,0 +1,14 @@
+cluster.difftest.edgeR.r
+make_barcode_information.r
+merge_and_cluster.sh
+plot_celltype_fraction.r
+plot_cluster_specific_qc.r
+plot_umap_qc.r
+Rplots.pdf
+run_snakemake_gen_bam_bigWig.sh
+Snakefile_generate_bamBigWig
+snapATAC.cluster.all_cells.r
+snapATAC.pre.createSnapObject.R
+split_bam_files.py
+summalize_bc_info.per_sample.r
+utility
