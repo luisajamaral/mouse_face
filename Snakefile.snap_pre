@@ -52,7 +52,7 @@ rule snap_add_mat:
   params:
       pbsName=lambda wildcards: wildcards.sample
   shell:
-    '''source activate py2.7 && \
+      '''source activate py2.7 && \
       snaptools snap-add-bmat  \
         --snap-file={input}  \
         --bin-size-list 1000 5000 10000  \

@@ -61,7 +61,7 @@ rule extend_peak_summits:
     pbsName=lambda wildcards: wildcards.tissue
   shell:
     "awk -v OFS='\t' '{{start=$2-500; if (start<0) {{start=0}}; print $1,start,$3+500,$4,$5}}' {input} > {output.bed};"
-    "bash ~/software/github/seq-min-scripts/bed_to_saf.sh {output.bed} {output.saf}"
+    "bash /mnt/tscc/yanxiao/software/github/seq-min-scripts/bed_to_saf.sh {output.bed} {output.saf}"
 
 
 rule call_peaks:
@@ -73,7 +73,7 @@ rule call_peaks:
   params:
     pbsName=lambda wildcards: wildcards.tissue
   shell:
-    "source activate py2.7 && macs2 callpeak -t {input} -n peaks/{wildcards.tissue} -g mm --keep-dup all;"
+    "macs2 callpeak -t {input} -n peaks/{wildcards.tissue} -g mm --keep-dup all;"
 # Paired-end mode does not work very well.
 #    "source activate py27 && macs2 callpeak -t {input} -n peaks/{wildcards.tissue} -g mm -f BAMPE --keep-dup all;"
 
